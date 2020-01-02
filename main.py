@@ -94,7 +94,7 @@ def paintBlock(x,y,square):
         painted[square] = 1
     painter.begin_fill()
     for i in range(4):
-        painter.forward((witdh//n)-1)
+        painter.forward((witdh/n)-1)
         painter.left(90)
     painter.end_fill()
 def drawButtonWithTitle(x,y,title):
@@ -136,11 +136,10 @@ def inGameMenu():
     
 
 def drawLevel():
-    
     level.pencolor("grey")
     x=-screenWitdh//2
     y=-screenHeight//2
-    k=float(witdh//n)
+    k=witdh/n
     for i in range(n+1):
         level.setheading(0)
         level.goto(x,y+(k*i))
@@ -236,13 +235,13 @@ def clicked(x,y):
     a = x+(screenWitdh//2)
     b = y+(screenHeight//2)
     
-    column =  a // (witdh//n)
-    row = b // (height//n)
+    column =  a // (witdh/n)
+    row = b // (height/n)
     square = int(column + row*n)
     
     
-    paint_x = ((column+1)*(witdh//n))-(screenWitdh//2)
-    paint_y  = ((row)*(height//n))-(screenHeight//2) 
+    paint_x = ((column+1)*(witdh/n))-(screenWitdh/2)
+    paint_y  = ((row)*(height/n))-(screenHeight/2) 
     if(a<witdh and a>0 and b<height and b>0):
         paintBlock(paint_x,paint_y,square)
     elif(a>671 and a<923):
