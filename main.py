@@ -29,7 +29,7 @@ correction = levels.randomLevelCorrection(levelcount)
 ##Screen size, background and background
 screen = turtle.getscreen()
 screen.bgcolor("black")
-screen.title("Paint it up!")
+screen.title("Pixel it!")
 screen.setup(screenWitdh,screenHeight)
 
 ##Level turtle setting
