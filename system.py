@@ -6,7 +6,7 @@ def sound(sound):
     if (platform.system() == "Linux"):
         merged = "aplay "+sound+"&"
         return os.system(merged)
-    elif (platform.system() == "Marvin"):
+    elif (platform.system() == "Darwin"):
         merged = "afplay "+sound+"&"
         return os.system(merged)
     elif (platform.system() ==  "Windows"):    
