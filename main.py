@@ -1,8 +1,8 @@
 import turtle
 import levels
 import random
-import winsound
-
+import os
+import system
 
 ##Statics
 wrongPainted = 0
@@ -83,7 +83,7 @@ def levelImage():
     image.shape(photo)
 
 def paintBlock(x,y,square):
-    winsound.PlaySound(painterSound,winsound.SND_ASYNC)
+    system.sound(painterSound)
     painter.setheading(90)
     painter.goto(x,y)
     if(painted[square] == 1):
@@ -196,7 +196,7 @@ def levelCheck():
     global correction
     
     if (paintedCounter() !=0):
-        winsound.PlaySound(cheerSound,winsound.SND_ASYNC)
+        system.sound(cheerSound)
         for i in range(n*n):
             if (painted[i] == correction[i]):
                 correctPainted += 1
@@ -206,7 +206,7 @@ def levelCheck():
         print(wrongPainted)
         print(correctPainted)
     else:
-        winsound.PlaySound(booSound,winsound.SND_ASYNC)
+        system.sound(booSound)
         score -= (n*n)*10
     print(score,"/",n*n*10)
     wrongPainted = 0
@@ -250,12 +250,11 @@ def clicked(x,y):
             levelCheck()
         elif(b>107 and b<147):
             ##Clear Button
-            winsound.PlaySound(clearSound,winsound.SND_ASYNC)
+            system.sound(clearSound)
             clearLevel()
         elif(b>57 and b<97):
             ##Restart Button
-            winsound.PlaySound(restartSound,winsound.SND_ASYNC)
+            system.sound(restartSound)
             restartGame()
 drawLevel()
 screen.onscreenclick(clicked)
-
