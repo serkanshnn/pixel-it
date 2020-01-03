@@ -1,7 +1,5 @@
 import platform
 
-
-
 def sound(sound):
     if (platform.system() == "Linux"):
         import os
