@@ -70,3 +70,4 @@ def clicked(x,y):
     
 drawMenu()
 screen.onscreenclick(clicked)
+turtle.mainloop()
