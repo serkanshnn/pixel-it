@@ -67,7 +67,6 @@ def clicked(x,y):
             turtle.bye()
             system.sound("sounds/clear.wav")
 
-
+    
 drawMenu()
 screen.onscreenclick(clicked)
-turtle.mainloop()
